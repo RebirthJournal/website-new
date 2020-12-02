@@ -1,0 +1,27 @@
+{% assign id = include.article.relative_path | split: '/' | last | remove_first: '.md' -%}
+{% capture markdown_options -%}
+  {::options auto_id_prefix="{{ id }}-" footnote_prefix="{{ id }}-" header_offset="4" /}
+{% endcapture -%}
+
+<article class="{% if include.article.poem -%} poem {%- else -%} article {%- endif %}">
+  <div id="{{ id }}"></div>
+
+  {% unless include.article.heading == false -%}
+    <h5 class="title-line d-flex flex-wrap mt-3 mb-5">
+      {%- if include.article.heading -%}
+        {%- for heading in include.article.heading -%}
+          <span>{{ heading }}</span>
+        {%- endfor -%}
+      {%- elsif include.article.author -%}
+        <span>{{ include.article.title }}</span>
+        <span>{{ include.article.author }}</span>
+      {%- else -%}
+        <span>{{ include.article.title }}</span>
+      {%- endif -%}
+    </h5>
+  {%- endunless -%}
+
+  <div {% if include.article.heading == false -%} id="{{ id }}" {%- endif %} class="article-text {% if include.article.split_columns -%} split-columns {%- endif %}">
+    {{ include.article.content | prepend: markdown_options | markdownify }}
+  </div>
+</article>

@@ -1,0 +1,45 @@
+url: https://rebirthjournal.cn
+baseurl: ""
+
+title: 《新生》
+tagline: 包校中文文学刊物
+author: 郭文瀚
+
+timezone: China/Shanghai
+
+collections:
+  articles:
+    output: true
+    permalink: /期刊/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: article
+  - scope:
+      path: "_articles/*/*/index.md"
+    values:
+      layout: chapter
+  - scope:
+      path: "_articles/*/index.md"
+    values:
+      layout: issue
+  - scope:
+      path: "_articles/index.md"
+    values:
+      layout: issues_index
+
+exclude:
+  - .sass_cache/
+  - .jekyll_cache/
+  - .gitignore
+  - CNAME
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - LICENSE
+  - README.md
+  - build.sh

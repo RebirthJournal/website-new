@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% assign paths = page.relative_path | split: '/' -%}
+
+{% assign chapter_name = paths[2] -%}
+
+{% assign issue_name = paths[1] -%}
+
+<main id="{{ chapter_name }}" class="d-flex flex-column align-items-center">
+  {% include chapter-heading.html chapter=page %}
+
+  {{ content }}
+
+  {% for article_name in page.articles -%}
+    {% capture article_path -%}
+      _articles/{{ issue_name }}/{{ chapter_name }}/{{ article_name }}.md
+    {%- endcapture -%}
+    {% assign article = site.articles | where: 'relative_path', article_path | first -%}
+
+    {% include article.html article=article -%}
+  {%- endfor %}
+
+  {% include paginator.html chapter=page -%}
+</main>
+
+{% include contents.html chapter=page %}

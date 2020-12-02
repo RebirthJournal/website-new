@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<main>
+  {% for issue in page.issues -%}
+    <a href="{{ issue }}">{{ issue }}</a>
+  {%- endfor %}
+</main>
