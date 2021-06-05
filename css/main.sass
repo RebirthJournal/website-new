@@ -74,6 +74,18 @@ $color-primary: black
   font-family: Kaiti, "Kaiti SC", STKaiti, serif
   font-weight: normal
 
+.font-larger
+  font-size: larger !important
+
+.font-smaller
+  font-size: smaller !important
+
+.color-black
+  color: $color-primary !important
+
+.color-white
+  color: white !important
+
 // General styles
 
 *:not(sup):target::before
@@ -334,11 +346,14 @@ main
     &.inside::after
       color: white
 
+    &.inside.color-black::after
+      color: black
+
     &.top.inside::after
       bottom: auto
 
     &.top.outside
-      margin-top: 1em
+      margin-top: 3em
 
       &::after
         top: auto
