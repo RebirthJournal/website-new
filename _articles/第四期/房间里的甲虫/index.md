@@ -1,6 +1,6 @@
 ---
 subtitle:
-  - 
+  -
 articles:
   - 洗澡
   - 理发店
