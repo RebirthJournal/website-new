@@ -1,6 +1,6 @@
 ---
 subtitle:
-  - 
+
 articles:
   - 发烧日记
   - 书与光
