@@ -1,5 +1,9 @@
 新生网站 <https://rebirthjournal.cn>。
 
+# 技术文档
+
+对于任何未来的维护者，请查阅[这个](https://github.com/RebirthJournal/website/blob/main/MAINTAINENCE.md)。
+
 # 上传指导
 
 ## 这些文件是什么？
