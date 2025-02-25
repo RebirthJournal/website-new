@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <style>
     html,
     body {
@@ -10,16 +9,41 @@ layout: default
         overflow-x: hidden;
         background: #333;
     }
+
+    @media (max-aspect-ratio: 1/1) {
+        main {
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: auto !important;
+            padding-left: 0 !important;
+        }
+
+        main img {
+            height: 50vh !important;
+            margin-bottom: 2rem !important;
+            padding-left: 0 !important;
+            margin-left: 50vw;
+            margin-right: 50vw;
+        }
+
+        main blockquote {
+            transform: none !important;
+            margin-left: 0 !important;
+            text-align: center;
+            font-size: 10pt !important;
+        }
+    }
 </style>
-<main class="d-flex flex-column align-items-center" style="background: #333">
+<main class="d-flex flex-row flex-wrap align-items-center" style="padding: 0; padding-left: 80px; height: 100vh;">
     <img
         src="/img/logo-white-transparent-vertical.png"
         alt="Logo"
-        style="height: 70vh; object-fit: contain"
+        style="height: 66vh; object-fit: contain; padding-left: 5%;"
     />
     <blockquote
         class="position-relative pl-0"
-        style="max-width: 28em; color: white; line-height: 1.5"
+        style="max-width: 28em; color: white; line-height: 1.5; font-size: 14pt; transform: translateY(22.5vh); margin-left: 5%;"
     >
         <div
             class="position-absolute text-right font-songti-light"
