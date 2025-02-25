@@ -164,6 +164,13 @@ body
     transform: translateX(-20px)
     opacity: 0
 
+#contents-toggle::before
+  color: rgba(0, 0, 0, 0.5)
+  content: "目录"
+  font-size: 12pt
+  display: inline-block
+  padding-right: 0.5em
+
 #contents-toggle::after
   @include contents-color()
   content: ""
